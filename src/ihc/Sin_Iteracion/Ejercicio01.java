@@ -1,6 +1,7 @@
 package ihc.Sin_Iteracion;
 
 import java.awt.Graphics;
+import java.util.Arrays;
 import javax.swing.JApplet;
 
 public class Ejercicio01 extends JApplet {
@@ -17,6 +18,7 @@ public class Ejercicio01 extends JApplet {
         g.drawString("Barra", 100, 10);
         encontrarFrec(a, f);
         pintarGrafic(g);
+        generarRamdon(5);
     }
 
     public void encontrarFrec(int[] a, int[] f) {
@@ -41,5 +43,15 @@ public class Ejercicio01 extends JApplet {
             s += c;
         }
         return s;
+    }
+
+    int ran[];
+
+    private void generarRamdon(int n) {
+        ran = new int[n];
+        for (int i = 0; i < ran.length; i++) {
+            ran[i] = (int) (Math.random() * n) + 1;
+        }
+        System.out.println(Arrays.toString(ran));
     }
 }
